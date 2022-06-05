@@ -22,7 +22,7 @@ app.use('/', express.static('public'))
 // Definimos a nossa rota default
 app.get('/api', (req, res) => {
   res.status(200).json({
-    message: 'API Dog Walker - 100% funcional!🐕👏',
+    message: 'API de Livros - 100% funcional!📚👏',
     version: '1.0.1'
   })
 

@@ -22,5 +22,3 @@ yarn add swagger-autogen --dev
 yarn add swagger-ui-express 
 ```
 
-## Demo
-https://backdogwalker.herokuapp.com
