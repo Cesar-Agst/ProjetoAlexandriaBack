@@ -1,5 +1,5 @@
 //Teste de Requisições REST - Usuários
-@baseURL = https://backdogwalker.herokuapp.com/api
+@baseURL = https://projetoalexandria.herokuapp.com/api
 //@baseURL = http://localhost:4000/api
 @id = 619d068ef455b2ded14c3af4
 ###
@@ -18,9 +18,9 @@ POST {{baseURL}}/usuarios
 Content-Type: application/json
 
 {
-   "nome": "Aluno Fatec Itu",
-   "email": "aluno@fatecitu.edu.br",
-   "senha": "Aluno@1"
+   "nome": "Joao da Silva Melo",
+   "email": "joao@gmail.com",
+   "senha": "Joao134"
 }
 
 ### 
@@ -36,11 +36,8 @@ Content-Type: application/json
 {
     "nome": "Walter Hugo Cavana Jr alves de Braga Neto oi",
     "email": "hugolima@uol.com",
-    "senha": "Walter2@",
-    "ativo": true,
-    "tipo": "Profissional",
-    "avatar": "https://ui-avatars.com/api/?background=3700B3&color=FFFFFF&name=Walter+Hugo+Cavana"
-  }
+    "senha": "Walter2@"
+      }
 
 ###
 // POST - Efetuar o Login

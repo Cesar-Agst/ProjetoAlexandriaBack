@@ -2,10 +2,7 @@ import express from 'express'
 import fs from 'fs'
 import cors from 'cors'
 import rotasUsuarios from './routes/usuarios.js'
-import rotasGeo from './routes/geo.js'
-import rotaUpload from './routes/upload.js'
-import rotasPasseadores from './routes/passeadores.js'
-import rotasPrestadores from './routes/prestadores.js'
+import rotaLivros from './routes/livros.js'
 
 const app = express();
 const port = process.env.PORT || 4000
@@ -33,15 +30,10 @@ app.get('/api', (req, res) => {
 
 //Rotas 
 app.use('/api/usuarios', rotasUsuarios)
-app.use('/api/passeadores', rotasPasseadores)
-app.use('/api/prestadores', rotasPrestadores)
+app.use('/api/livros', rotasLivros)
 
-app.use('/api/geo', rotasGeo)
 
-/* Rota do upload */
-app.use('/upload', rotaUpload)
 
-app.use('/doc', swaggerUI.serve, swaggerUI.setup(JSON.parse(fs.readFileSync('./src/swagger/swagger_output.json'))))
 
 // Rota para tratar exceções - 404 (Deve ser a última rota SEMPRE) 
 app.use(function (req, res) {

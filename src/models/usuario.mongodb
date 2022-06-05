@@ -1,5 +1,5 @@
 //Selecione o database
-use('dogWalker')
+use('LivrosDB')
 
 // Remove a collection
 db.usuarios.drop()
@@ -27,18 +27,7 @@ db.createCollection('usuarios', {
                     bsonType: 'string',
                     description: 'Senha do usuário criptografada'
                 },
-                ativo: {
-                    bsonType: 'bool',
-                    description: 'Usuário está ativo?'
-                },
-                tipo: {
-                    enum: ['Admin', 'Cliente', 'Profissional'],
-                    description: 'O tipo do usuário informado deve ser válido'
-                },
-                avatar: {
-                    bsonType: 'string',
-                    description: 'URL do Avatar do usuário'
-                }
+
             }
         }
     },
@@ -52,12 +41,10 @@ db.usuarios.createIndex({ 'email': 1 }, { unique: true })
 
 //Insere um novo registro
 db.usuarios.insertOne({
-    'nome': 'Maria Alves',
-    'email': 'mariaalves@uol.com',
-    'senha': '123Mudar',
-    'ativo': true,
-    'tipo': 'Cliente',
-    'avatar': 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=Maria+Gusmão'
+    'nome': 'Jorge Silva Santana',
+    'email': 'jorge@gamil.com',
+    'senha': '123jorge',
+    
 })
 
 //Lista todos os registros
@@ -67,19 +54,19 @@ db.usuarios.find()
 db.usuarios.find({ '_id': { $eq: ObjectId('61891d38a64a453659f55c56') } })
 
 //Lista um registro por parte do nome (i=insensitive case)
-db.usuarios.find({ nome: { $regex: 'alves', $options: "i" } })
+db.usuarios.find({ nome: { $regex: 'Santana', $options: "i" } })
 
 //Ocultando a coluna senha da listagem
 db.usuarios.find({}, { senha: 0 })
 
 //Lista um usuário a partir do seu email
-db.usuarios.find({ email: { $eq: 'mariaalves@uol.com' } })
+db.usuarios.find({ email: { $eq: 'jorge@gamil.com' } })
 
 //Lista um usuário a partir de parte do seu email ou nome
 db.usuarios.find({
       $or:
       [
-       {nome: { $regex: 'alguém', $options: "i" } },
-       {email: { $regex: 'uol', $options: "i" } }
+       {nome: { $regex: 'Jorge', $options: "i" } },
+       {email: { $regex: 'gmail', $options: "i" } }
       ]
       })

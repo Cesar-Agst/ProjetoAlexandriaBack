@@ -42,7 +42,7 @@ const upload = multer({
 * Processo de upload de uma imagem
 * POST /
 *********************************************/
-const uploadSingleImage = upload.single('arquivo')
+const uploadSingleImage = upload.single('Livro')
 
 router.post('/', function (req, res) {
 
@@ -54,7 +54,7 @@ router.post('/', function (req, res) {
             })
         }
         const file = req.file
-        const dadosArquivo = {
+        const dadosLivro = {
             status: true,
             filename: file.filename,
             mimetype: file.mimetype,
@@ -64,8 +64,8 @@ router.post('/', function (req, res) {
         }
         //Salvando os dados do upload no MongoDB
         await db.collection(nomeCollection)
-        .insertOne(dadosArquivo)
-        .then(result => res.status(200).send(dadosArquivo)) 
+        .insertOne(dadosLivro)
+        .then(result => res.status(200).send(dadosLivro)) 
         .catch(err => res.status(400).json(err))
     })
 })

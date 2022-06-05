@@ -1,0 +1,95 @@
+//Teste de Requisições REST - Livro
+//@baseURL = https://orojetoalexandria.herokuapp.com/api
+@baseURL = http://localhost:4000/api
+@id = 
+@razao = capura
+###
+// GET - Lista todos os livros
+GET {{baseURL}}/livros
+Content-Type: application/json
+
+###
+// GET - Lista apenas um livro pelo id
+GET {{baseURL}}/livros/id/{{id}}
+Content-Type: application/json
+
+
+###
+// POST - Inclui um novo livro
+POST {{baseURL}}/livros
+Content-Type: application/json
+
+{
+   "_id": "",
+   "Nome": "5 minutos",
+   "Autor": "José de Alencar",
+   "Publicação": "1856",
+   "Gênero": "Romance"
+}
+
+### 
+// DELETE - Apaga um livro através do id informado
+DELETE {{baseURL}}/livros/{{id}}
+Content-Type: application/json
+
+###
+// PUT - Altera um livro pelo ID
+PUT {{baseURL}}/livros
+Content-Type: application/json
+
+{
+   "_id": "",
+   "Nome": "5 minutos",
+   "Autor": "José de Alencar",
+   "Publicação": "1856",
+   "Gênero": "Romance"
+   
+}
+
+
+
+//Teste de requisições REST
+@baseURL = http://localhost:4000/api
+@genero = Aventura
+@nome = Piquinique na estrada
+###
+
+//get - lista todos os livros
+GET {{baseURL}}/livros
+Content-Type: application/json
+###
+
+//get - lista todos por genero
+GET {{baseURL}}/livros/{{genero}}
+Content-Type: application/json
+###
+
+//post - adiciona um novo livro
+POST {{baseURL}}/livros
+Content-Type: application/json
+
+{
+    "nome":"Piquinique na estrada",
+    "sinopse":"Alien faz piquinique e esquece bagagem na terra",
+    "preco": 15.00,
+    "autor":"Arkádi Strugátski",
+    "genero":"ficção científica"
+}
+###
+
+//put - atualiza um novo livro ja existente
+PUT {{baseURL}}/livros
+Content-Type: application/json
+
+{
+    "nome":"Piquinique na estrada",
+    "sinopse":"Alien faz piquinique e esquece bagagem na terra",
+    "preco": 15.00,
+    "autor":"Irmãos Strugátski",
+    "genero":"ficção científica"
+}
+###
+
+//delete - deleta um livro
+DELETE  {{baseURL}}/livros/{{nome}}
+Content-Type: application/json
