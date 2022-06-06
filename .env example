@@ -1,6 +1,0 @@
-MONGODB_URI=SuaStringConexao
-MONGODB_DB=SeuBD
-SECRET_KEY=SuaSuperChaveSecreta
-EXPIRES_IN=24h
-MAP_QUEST_API_KEY=SuaAPIKey
-
