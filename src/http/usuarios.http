@@ -1,7 +1,7 @@
 //Teste de Requisições REST - Usuários
 @baseURL = https://projetoalexandria.herokuapp.com/api
 //@baseURL = http://localhost:4000/api
-@id = 629d70d4f47b0c8120b05336
+@id = 619d068ef455b2ded14c3af4
 ###
 // GET - Lista todos os usuários
 GET {{baseURL}}/usuarios
@@ -18,26 +18,26 @@ POST {{baseURL}}/usuarios
 Content-Type: application/json
 
 {
-   "nome": "Joao da Silva Melo",
-   "email": "joao@gmail.com",
-   "senha": "Joao1@"
+   "nome": "Zezinho",
+   "email": "zezinho@fatec.com.br",
+   "senha": "Aluno@1"
 }
 
 ### 
-// DELETE - Apaga um estudante através do id informado
+// DELETE - Apaga um usuario através do id informado
 DELETE {{baseURL}}/usuarios/{{id}}
 Content-Type: application/json
 
 ###
-// PUT - Altera um estudante pelo ID
+// PUT - Altera um usuario pelo ID
 PUT {{baseURL}}/usuarios/{{id}}
 Content-Type: application/json
 
 {
-    "nome": "Walter Hugo Cavana Jr alves de Braga Neto oi",
-    "email": "hugolima@uol.com",
-    "senha": "Walter2@"
-      }
+    "nome": "Carlos Miguel",
+    "email": "cmiguel@uol.com",
+    "senha": "carlos2@",
+  }
 
 ###
 // POST - Efetuar o Login
@@ -45,8 +45,8 @@ POST {{baseURL}}/usuarios/login
 Content-Type: application/json
 
 {
-   "email": "aluno@fatecitu.edu.br",
-   "senha": "123456"
+   "email": "zezinho@fatec.com.br",
+   "senha": "Aluno@1"
 
 }
 

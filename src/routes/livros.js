@@ -76,30 +76,11 @@ router.get("/id/:id", async (req, res) => {
   }
 })
 
-/**********************************************
- * GET /livros/razao/:razao
- **********************************************/
-router.get("/razao/:razao", async (req, res) => {
-  /* #swagger.tags = ['livros']
-    #swagger.description = 'Endpoint que retorna os dados do livro filtrando por parte da Razão Social' 
-    */
-  try {
-    db.collection(nomeCollection).find({ razao_social: { $regex: req.params.razao, $options: "i" } }).toArray((err, docs) => {
-      if (err) {
-        res.status(400).json(err) //bad request
-      } else {
-        res.status(200).json(docs) //retorna o documento
-      }
-    })
-  } catch (err) {
-    res.status(500).json({ "error": err.message })
-  }
-})
 
 /**********************************************
  * POST /livros/
  **********************************************/
-router.post('/', validaCarona, async (req, res) => {
+router.post('/', validaLivro, async (req, res) => {
   /* #swagger.tags = ['livros']
     #swagger.description = 'Endpoint que inclui um novo livro' 
     */
@@ -120,7 +101,7 @@ router.post('/', validaCarona, async (req, res) => {
  * PUT /livros
  * Alterar um livro pelo ID
  **********************************************/
-router.put('/', validaCarona, async (req, res) => {
+router.put('/', validaLivro, async (req, res) => {
   let idDocumento = req.body._id
   delete req.body._id //removendo o ID do body para o update não apresentar o erro 66
   /* #swagger.tags = ['livros']
