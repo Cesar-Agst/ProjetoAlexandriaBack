@@ -2,7 +2,6 @@ import express from 'express'
 import fs from 'fs'
 import cors from 'cors'
 import rotasUsuarios from './routes/usuarios.js'
-import rotasGeo from './routes/geo.js'
 import rotaUpload from './routes/upload.js'
 import rotaLivros from './routes/livros.js'
 
@@ -34,7 +33,6 @@ app.get('/api', (req, res) => {
 app.use('/api/usuarios', rotasUsuarios)
 app.use('/api/livros', rotaLivros)
 
-app.use('/api/geo', rotasGeo)
 
 /* Rota do upload */
 app.use('/upload', rotaUpload)
