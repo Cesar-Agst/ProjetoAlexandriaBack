@@ -1,7 +1,7 @@
 //Teste de Requisições REST - Prestadores
 //@baseURL = https://projetoalexandria.herokuapp.com/api
 @baseURL = http://localhost:4000/api
-@id = 62962dd12e4a6ef5f039e2c4
+@id = 629d9781b2f40e9bde18b754
 @razao = capura
 ###
 // GET - Lista todos os livros
@@ -19,12 +19,11 @@ POST {{baseURL}}/livros
 Content-Type: application/json
 
 {
-   "nome": "Carolina Diaz",
-   "email": "carol@beauty.com.br",
-   "celular": "",
-   "servico": "Manicuri",
-   "ativo": "",
-   "cep": "04776150",
+   "nome": "Duna",
+   "autor": "José de Alencar",
+   "publicação": "1856",
+   "gênero": "Romance",
+   "N° de pagnias": "1000"
 }
 
 ### 
@@ -39,10 +38,9 @@ Content-Type: application/json
 
 {
    "_id": "6267f34532ae23b306a82e20",
-    "nome": "Carolina Santos",
-   "email": "carol@beauty.com.br",
-   "celular": "",
-   "servico": "Cabeleireira",
-   "ativo": "",
-   "cep": "04776150",
+   "nome": "Duna",
+   "autor": "José de Alencar",
+   "publicação": "1856",
+   "gênero": "Romance",
+   "N° de pagnias": "1000"
 }

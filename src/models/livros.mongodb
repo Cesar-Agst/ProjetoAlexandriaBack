@@ -28,16 +28,23 @@ db.createCollection('livros', {
                     description: 'Informe o gênero do livro'
                 },
                 
-                       publicação: {
-                            bsonType: "double",
-                            minimum: 1,
-                            maximum: 2022,
-                            description: "Informe ano de lançamento do livro"
-                        },
+                publicação: {
+                    bsonType: "double",
+                    minimum: 1,
+                    maximum: 2022,
+                    description: "Informe ano de lançamento do livro"
+                    },
+
+                paginas: {
+                    bsonType: "double",
+                    minimum: 1,
+                    maximum: 2022,
+                    description: "Informe o numero de paginas"
+                    },
                         
-                    }
                 }
-            },
+            }
+        },
     validationLevel: 'off', //strict-> aplica no insert e no update. moderate apenas no insert or off
     validationAction: 'error' //error->rejeita o documento ou warn->registra no log mas permite a inclusão
 
@@ -49,9 +56,10 @@ db.livros.find()
 //Insere um novo registro
 db.livros.insertOne({
     "nome": "Duna",
-    "autor": "José de Alencar",
-    "publicação": "1856",
-    "gênero": "Romance",
+   "autor": "José de Alencar",
+   "publicação": "1856",
+   "gênero": "Romance",
+   "N° de pagnias": "1000"
     
 })
 
