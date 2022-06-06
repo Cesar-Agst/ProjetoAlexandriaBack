@@ -1,7 +1,7 @@
-//Teste de Requisições REST - Livro
-@baseURL = https://projetoalexandria.herokuapp.com/api
+//Teste de Requisições REST - Prestadores
+@baseURL = https://beautyspotbr.herokuapp.com/api
 //@baseURL = http://localhost:4000/api
-@id = 629d9781b2f40e9bde18b754
+@id = 62962dd12e4a6ef5f039e2c4
 @razao = capura
 ###
 // GET - Lista todos os livros
@@ -13,17 +13,18 @@ Content-Type: application/json
 GET {{baseURL}}/livros/id/{{id}}
 Content-Type: application/json
 
-
 ###
 // POST - Inclui um novo livro
 POST {{baseURL}}/livros
 Content-Type: application/json
 
 {
-   "nome": "5 minutos",
-   "autor": "José de Alencar",
-   "lançamento": "1856",
-   "Gênero": "Romance"
+   "nome": "Carolina Diaz",
+   "email": "carol@beauty.com.br",
+   "celular": "",
+   "servico": "Manicuri",
+   "ativo": "",
+   "cep": "04776150",
 }
 
 ### 
@@ -37,10 +38,11 @@ PUT {{baseURL}}/livros
 Content-Type: application/json
 
 {
-   "_id": "629d9781b2f40e9bde18b754",
-   "nome": "5 minutos",
-   "autor": "José de Alenzar",
-   "lançamento": "1856",
-   "Gênero": "Romance"
-   
+   "_id": "6267f34532ae23b306a82e20",
+    "nome": "Carolina Santos",
+   "email": "carol@beauty.com.br",
+   "celular": "",
+   "servico": "Cabeleireira",
+   "ativo": "",
+   "cep": "04776150",
 }
