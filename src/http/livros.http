@@ -1,7 +1,7 @@
 //Teste de Requisições REST - Livro
 //@baseURL = https://projetoalexandria.herokuapp.com/api
 @baseURL = http://localhost:4000/api
-@id = 
+@id = 629d9781b2f40e9bde18b754
 @razao = capura
 ###
 // GET - Lista todos os livros
@@ -20,10 +20,10 @@ POST {{baseURL}}/livros
 Content-Type: application/json
 
 {
-    "nome": "Duna",
-    "autor": "José de Alencar",
-    "publicação": "1856",
-    "gênero": "Romance",
+   "nome": "5 minutos",
+   "autor": "José de Alencar",
+   "lançamento": "1856",
+   "Gênero": "Romance"
 }
 
 ### 
@@ -37,32 +37,10 @@ PUT {{baseURL}}/livros
 Content-Type: application/json
 
 {
-   "_id": "",
-   "Nome": "5 minutos",
-   "Autor": "José de Alencar",
-   "Publicação": "1856",
+   "_id": "629d9781b2f40e9bde18b754",
+   "nome": "5 minutos",
+   "autor": "José de Alenzar",
+   "lançamento": "1856",
    "Gênero": "Romance"
    
 }
-
-
-
-//Teste de requisições REST
-@baseURL = http://localhost:4000/api
-@genero = Aventura
-@nome = Piquinique na estrada
-###
-
-//get - lista todos os livros
-GET {{baseURL}}/livros
-Content-Type: application/json
-###
-
-//get - lista todos por genero
-GET {{baseURL}}/livros/{{genero}}
-Content-Type: application/json
-###
-
-//delete - deleta um livro
-DELETE  {{baseURL}}/livros/{{nome}}
-Content-Type: application/json

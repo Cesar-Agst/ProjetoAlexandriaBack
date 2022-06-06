@@ -13,8 +13,8 @@ const { db, ObjectId } = await connectToDatabase()
  **********************************************/
 const validaLivro= [
     check('nome', 'Nome do livro é obrigatório').not().isEmpty(),
-    check('autor(a)', 'Nome do(a) autor(a)é obrigatório').not().isEmpty(),
-    check('ano de lançamento', 'A data de lançamento tem que ser em números').isNumeric()
+    check('autor', 'Nome do(a) autor(a)é obrigatório').not().isEmpty(),
+    check('lançamento', 'A data de lançamento tem que ser em números').isNumeric()
 ]
 
 /**********************************************
