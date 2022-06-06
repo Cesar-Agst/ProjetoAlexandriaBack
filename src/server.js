@@ -4,7 +4,7 @@ import cors from 'cors'
 import rotasUsuarios from './routes/usuarios.js'
 import rotasGeo from './routes/geo.js'
 import rotaUpload from './routes/upload.js'
-import rotaProfissionais from './routes/profissionais.js'
+import rotaLivros from './routes/livros.js'
 
 const app = express();
 const port = process.env.PORT || 4000
