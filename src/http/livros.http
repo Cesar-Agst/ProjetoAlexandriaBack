@@ -1,7 +1,8 @@
 //Teste de Requisições REST - Prestadores
 //@baseURL = https://projetoalexandria.herokuapp.com/api
 @baseURL = http://localhost:4000/api
-@id = 629d9781b2f40e9bde18b754
+@id = 629e361678caf871a5151b0f
+@nome =
 @razao = capura
 ###
 // GET - Lista todos os livros
@@ -20,15 +21,20 @@ Content-Type: application/json
 
 {
    "nome": "Duna",
-   "autor": "José de Alencar",
-   "publicação": "1856",
-   "gênero": "Romance",
-   "N° de pagnias": "1000"
+   "autor": "Frank Herbet",
+   "lançamento": "1965",
+   "gênero": "Ficção Científica",
+   "paginas": "1000"
 }
 
 ### 
 // DELETE - Apaga um livro através do id informado
 DELETE {{baseURL}}/livros/{{id}}
+Content-Type: application/json
+
+### 
+// DELETE - Apaga um livro através do nome informado
+DELETE {{baseURL}}/livros/{{nome}}
 Content-Type: application/json
 
 ###
@@ -37,10 +43,10 @@ PUT {{baseURL}}/livros
 Content-Type: application/json
 
 {
-   "_id": "6267f34532ae23b306a82e20",
+   "_id": "629e361678caf871a5151b0f",
    "nome": "Duna",
-   "autor": "José de Alencar",
-   "publicação": "1856",
-   "gênero": "Romance",
-   "N° de pagnias": "1000"
+   "autor": "Frank Herbet",
+   "lançamento": "1965",
+   "gênero": "Ficção Científica",
+   "paginas": "1000"
 }
