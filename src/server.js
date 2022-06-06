@@ -32,7 +32,7 @@ app.get('/api', (req, res) => {
 
 //Rotas 
 app.use('/api/usuarios', rotasUsuarios)
-app.use('/api/profissionais', rotaProfissionais)
+app.use('/api/livros', rotaLivros)
 
 app.use('/api/geo', rotasGeo)
 
