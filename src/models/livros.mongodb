@@ -46,10 +46,6 @@ db.createCollection('livros', {
 
 })
 
-
-
-
-
 //Insere um novo registro
 db.livros.insertOne({
     "nome": "5 minutos",
@@ -58,7 +54,6 @@ db.livros.insertOne({
     "gênero": "Romance",
     
 })
-
 
 //Lista um registro pelo Id
 db.livros.find({ '_id': { $eq: ObjectId('61891d38a64a453659f55c56') } })

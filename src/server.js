@@ -1,7 +1,7 @@
 import express from 'express'
 import fs from 'fs'
 import cors from 'cors'
-import rotasUsuarios from './routes/usuarios.js'
+import rotaUsuarios from './routes/usuarios.js'
 import rotaLivros from './routes/livros.js'
 
 const app = express();
@@ -29,8 +29,8 @@ app.get('/api', (req, res) => {
 })
 
 //Rotas 
-app.use('/api/usuarios', rotasUsuarios)
-app.use('/api/livros', rotasLivros)
+app.use('/api/usuarios', rotaUsuarios)
+app.use('/api/livros', rotaLivros)
 
 
 

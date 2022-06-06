@@ -11,7 +11,7 @@ db.createCollection('usuarios', {
     validator: {
         $jsonSchema: {
             bsonType: 'object',
-            required: ['nome', 'email', 'senha', 'ativo', 'tipo'],
+            required: ['nome', 'email', 'senha'],
             properties: {
                 nome: {
                     bsonType: 'string',
@@ -42,7 +42,7 @@ db.usuarios.createIndex({ 'email': 1 }, { unique: true })
 //Insere um novo registro
 db.usuarios.insertOne({
     'nome': 'Jorge Silva Santana',
-    'email': 'jorge@gamil.com',
+    'email': 'jorge@gmail.com',
     'senha': '123jorge',
     
 })

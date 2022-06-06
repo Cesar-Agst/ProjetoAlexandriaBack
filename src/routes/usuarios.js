@@ -39,13 +39,7 @@ const validaUsuario = [
       minLowercase: 1,
       minUppercase: 1,
       minNumbers: 1,
-    }).withMessage('A senha informada não é segura. Ela deve conter ao menos 1 letra maiúscula e 1 número  '),
-  check('ativo')
-    .default(true)
-    .not().isString().withMessage('O valor informado para o campo ativo não pode ser um texto')
-    .not().isInt().withMessage('O valor informado para o campo ativo não pode ser um número')
-    .isBoolean().withMessage('O valor informado para o campo ativo deve ser um booleano (True ou False)')
-  
+    }).withMessage('A senha informada não é segura. Ela deve conter ao menos 1 letra maiúscula e 1 número  ')
 ]
 
 
