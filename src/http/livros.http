@@ -1,6 +1,6 @@
 //Teste de Requisições REST - Livro
-//@baseURL = https://projetoalexandria.herokuapp.com/api
-@baseURL = http://localhost:4000/api
+@baseURL = https://projetoalexandria.herokuapp.com/api
+//@baseURL = http://localhost:4000/api
 @id = 629d9781b2f40e9bde18b754
 @razao = capura
 ###

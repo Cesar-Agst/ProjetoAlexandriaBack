@@ -5,7 +5,7 @@
     "title": "📚 Projeto Alexandria",
     "description": "➡️Documentação gerada automaticamente pelo módulo <a href='https://github.com/davibaltar/swagger-autogen' target='_blank'>swagger-autogen</a>."
   },
-  "host": "backdogwalker.herokuapp.com",
+  "host": "projetoalexandria.herokuapp.com",
   "basePath": "/",
   "tags": [],
   "schemes": [
