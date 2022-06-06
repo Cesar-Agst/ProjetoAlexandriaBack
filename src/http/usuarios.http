@@ -1,7 +1,7 @@
 //Teste de Requisições REST - Usuários
 //@baseURL = https://projetoalexandria.herokuapp.com/api
 @baseURL = http://localhost:4000/api
-@id = 619d068ef455b2ded14c3af4
+@id = 629d70d4f47b0c8120b05336
 ###
 // GET - Lista todos os usuários
 GET {{baseURL}}/usuarios

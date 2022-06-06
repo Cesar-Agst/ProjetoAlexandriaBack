@@ -19,9 +19,11 @@ const validaUsuario = [
   check('nome')
     .not().isEmpty().trim().withMessage('É obrigatório informar o nome do usuário')
     .isAlpha('pt-BR', { ignore: ' ' }).withMessage('O nome do usuário deve conter apenas texto')
+    .isLength({ min: 3 }).withMessage('O nome do usuário é muito curto. Informe ao menos 3 caracteres')
     .isLength({ max: 100 }).withMessage('O nome do usuário é muito longo. Informe no máximo 100 caracteres'),
   check('email')
     .not().isEmpty().trim().withMessage('É obrigatório informar o email do usuário')
+    .isLowercase().withMessage('O email não pode conter caracteres MAIÚSCULOS')
     .isEmail().withMessage('O email do usuário deve ser válido')
     .custom((value, { req }) => {
       return db.collection(nomeCollection).find({ email: { $eq: value } }).toArray()
@@ -33,13 +35,26 @@ const validaUsuario = [
     }),
   check('senha')
     .not().isEmpty().trim().withMessage('É obrigatório informar a senha do usuário')
-    .isLength({ min: 5 }).withMessage('A senha deve conter no mínimo 5 caracteres')
+    .isLength({ min: 6 }).withMessage('A senha deve conter no mínimo 6 caracteres')
     .isStrongPassword({
-      minLength: 5,
+      minLength: 6,
       minLowercase: 1,
       minUppercase: 1,
-      minNumbers: 1,
-    }).withMessage('A senha informada não é segura. Ela deve conter ao menos 1 letra maiúscula e 1 número  ')
+      minSymbols: 1,
+      minNumbers: 1
+    }).withMessage('A senha informada não é segura. Ela deve conter ao menos 1 letra maiúscula, 1 número e 1 símbolo '),
+  check('ativo')
+    .default(true)
+    .not().isString().withMessage('O valor informado para o campo ativo não pode ser um texto')
+    .not().isInt().withMessage('O valor informado para o campo ativo não pode ser um número')
+    .isBoolean().withMessage('O valor informado para o campo ativo deve ser um booleano (True ou False)'),
+  check('tipo')
+    .default('Cliente')
+    .not().isEmpty().trim().withMessage('É obrigatório informar o tipo do usuário')
+    .isIn(['Admin', 'Cliente', 'Profissional']).withMessage('O tipo informado deve ser Admin, Cliente ou Profissional'),
+  check('avatar')
+    .default('https://ui-avatars.com/api/?background=3700B3&color=FFFFFF&name=Dog+Walker')
+    .isURL().withMessage('O endereço do avatar deve ser uma URL válida')
 ]
 
 

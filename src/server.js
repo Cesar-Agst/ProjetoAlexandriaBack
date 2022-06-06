@@ -33,8 +33,6 @@ app.use('/api/usuarios', rotaUsuarios)
 app.use('/api/livros', rotaLivros)
 
 
-
-
 // Rota para tratar exceções - 404 (Deve ser a última rota SEMPRE) 
 app.use(function (req, res) {
   res.status(404).json({

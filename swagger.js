@@ -5,10 +5,10 @@ const doc = {
     swagger: "2.0",
     info: {
         version: "1.0.0",
-        title: "🐕API DogWalker",
+        title: "📚 Projeto Alexandriar",
         description: "➡️Documentação gerada automaticamente pelo módulo <a href='https://github.com/davibaltar/swagger-autogen' target='_blank'>swagger-autogen</a>."
     },
-    host: 'backdogwalker.herokuapp.com',
+    host: 'localgost:4000',
     basePath: "/",
     schemes: ['https'],
     consumes: ['application/json'],

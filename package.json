@@ -26,18 +26,18 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-validator": "^6.13.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.1",
     "jsonwebtoken": "^8.5.1",
-    "mongodb": "4.1.4",
-    "multer": "^1.4.3",
-    "node-fetch": "^3.1.1",
-    "swagger-ui-express": "^4.3.0"
+    "mongodb": "^4.6.0",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.2.5",
+    "swagger-ui-express": "^4.4.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
-    "swagger-autogen": "^2.17.2"
+    "nodemon": "^2.0.16",
+    "swagger-autogen": "^2.21.3"
   },
   "engines": {
     "node": "14.x",

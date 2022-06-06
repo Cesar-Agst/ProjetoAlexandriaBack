@@ -10,45 +10,46 @@ db.livros.drop()
 */
 db.createCollection('livros', {
     validator: {
-        $jsonSchema: $jsonSchema: {
+        $jsonSchema: {
             bsonType: 'object',
             required: ['nome'],
             properties: {
                 nome: {
                     bsonType: 'string',
                     minLength: 1,
-                    maxLength: 50,
-                    description: 'Nome do livro é obrigatório'
+                    maxLength: 100,
+                    description: 'O nome do livro é obgrigatório'
                 },
                 autor: {
                     bsonType: 'string',
-                    description: 'Nome do autor é obrigatório'
+                    description: 'nome do autor'
                 },
-                publicação: {
-                    bsonType: 'double',
-                    minimum: 1,
-                    maximum: 2022,
-                   description: "O ano de publicação do livro deve ser entre o ano 1 até 2022"
-                },
-                  gênero: {
+                genero: {
                     bsonType: 'string',
-                    description: 'O gênero do livro é obrigatório'
+                    description: 'Informe o gênero do livro'
+                },
+                
+                       publicação: {
+                            bsonType: "double",
+                            minimum: 1,
+                            maximum: 2022,
+                            description: "Informe ano de lançamento do livro"
+                        },
+                        
+                    }
                 }
-
-      
-            }
-        }
-                      
-                 
-    },
+            },
     validationLevel: 'off', //strict-> aplica no insert e no update. moderate apenas no insert or off
     validationAction: 'error' //error->rejeita o documento ou warn->registra no log mas permite a inclusão
 
 })
 
+//Lista todos os registros
+db.livros.find()
+
 //Insere um novo registro
 db.livros.insertOne({
-    "nome": "5 minutos",
+    "nome": "Duna",
     "autor": "José de Alencar",
     "publicação": "1856",
     "gênero": "Romance",

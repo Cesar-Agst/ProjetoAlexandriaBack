@@ -17,8 +17,6 @@ const validaLivro= [
     check('ano de lançamento', 'A data de lançamento tem que ser em números').isNumeric()
 ]
 
-
-
 /**********************************************
  * GET /livros/:id
  **********************************************/
@@ -38,6 +36,46 @@ router.get("/:id", async (req, res) => {
         res.status(500).json({ "error": err.message })
     }
 })
+
+/**********************************************
+ * GET /api/livros
+ **********************************************/
+ router.get('/', async (req, res) => {
+    /* 
+     #swagger.tags = ['livros']
+     #swagger.description = 'Endpoint para obter todos os livros de Serviço do sistema.' 
+     */
+    try {
+      db.collection(nomeCollection).find({}, {
+        projection: { senha: false }
+      }).sort({ nome: 1 }).toArray((err, docs) => {
+        if (!err) {
+          /* 
+          #swagger.responses[200] = { 
+       schema: { "$ref": "#/definitions/livros" },
+       description: "Listagem dos livros de serviço obtida com sucesso" } 
+       */
+          res.status(200).json(docs)
+        }
+      })
+    } catch (err) {
+      /* 
+         #swagger.responses[500] = { 
+      schema: { "$ref": "#/definitions/Erro" },
+      description: "Erro ao obter a listagem dos livros" } 
+      */
+      res.status(500).json({
+        errors: [
+          {
+            value: `${err.message}`,
+            msg: 'Erro ao obter a listagem dos livros de serviço',
+            param: '/'
+          }
+        ]
+      })
+    }
+  })
+
 
 /**********************************************
  * GET /livros/nome/:nome
@@ -116,4 +154,3 @@ router.delete('/:id', async (req, res) => {
 })
 
 export default router
-
