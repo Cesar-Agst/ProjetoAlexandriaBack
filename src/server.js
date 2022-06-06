@@ -1,8 +1,10 @@
 import express from 'express'
 import fs from 'fs'
 import cors from 'cors'
-import rotaUsuarios from './routes/usuarios.js'
-import rotaLivros from './routes/livros.js'
+import rotasUsuarios from './routes/usuarios.js'
+import rotasGeo from './routes/geo.js'
+import rotaUpload from './routes/upload.js'
+import rotaProfissionais from './routes/profissionais.js'
 
 const app = express();
 const port = process.env.PORT || 4000
@@ -22,16 +24,22 @@ app.use('/', express.static('public'))
 // Definimos a nossa rota default
 app.get('/api', (req, res) => {
   res.status(200).json({
-    message: 'API de Livros - 100% funcional!📚👏',
+    message: 'API Livraria - 100% funcional!🐕👏',
     version: '1.0.1'
   })
 
 })
 
 //Rotas 
-app.use('/api/usuarios', rotaUsuarios)
-app.use('/api/livros', rotaLivros)
+app.use('/api/usuarios', rotasUsuarios)
+app.use('/api/profissionais', rotaProfissionais)
 
+app.use('/api/geo', rotasGeo)
+
+/* Rota do upload */
+app.use('/upload', rotaUpload)
+
+app.use('/doc', swaggerUI.serve, swaggerUI.setup(JSON.parse(fs.readFileSync('./src/swagger/swagger_output.json'))))
 
 // Rota para tratar exceções - 404 (Deve ser a última rota SEMPRE) 
 app.use(function (req, res) {
@@ -50,4 +58,3 @@ app.use(function (req, res) {
 app.listen(port, function () {
   console.log(`🚀 Servidor rodando na porta ${port}`)
 })
-

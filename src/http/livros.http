@@ -1,5 +1,5 @@
 //Teste de Requisições REST - Prestadores
-@baseURL = https://beautyspotbr.herokuapp.com/api
+@baseURL = https://projetoalexandria.herokuapp.com/api
 //@baseURL = http://localhost:4000/api
 @id = 62962dd12e4a6ef5f039e2c4
 @razao = capura
