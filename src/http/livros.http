@@ -20,11 +20,10 @@ POST {{baseURL}}/livros
 Content-Type: application/json
 
 {
-   "_id": "",
-   "Nome": "5 minutos",
-   "Autor": "José de Alencar",
-   "Publicação": "1856",
-   "Gênero": "Romance"
+    "nome": "Duna",
+    "autor": "José de Alencar",
+    "publicação": "1856",
+    "gênero": "Romance",
 }
 
 ### 
@@ -62,32 +61,6 @@ Content-Type: application/json
 //get - lista todos por genero
 GET {{baseURL}}/livros/{{genero}}
 Content-Type: application/json
-###
-
-//post - adiciona um novo livro
-POST {{baseURL}}/livros
-Content-Type: application/json
-
-{
-    "nome":"Piquinique na estrada",
-    "sinopse":"Alien faz piquinique e esquece bagagem na terra",
-    "preco": 15.00,
-    "autor":"Arkádi Strugátski",
-    "genero":"ficção científica"
-}
-###
-
-//put - atualiza um novo livro ja existente
-PUT {{baseURL}}/livros
-Content-Type: application/json
-
-{
-    "nome":"Piquinique na estrada",
-    "sinopse":"Alien faz piquinique e esquece bagagem na terra",
-    "preco": 15.00,
-    "autor":"Irmãos Strugátski",
-    "genero":"ficção científica"
-}
 ###
 
 //delete - deleta um livro

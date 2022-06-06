@@ -20,7 +20,7 @@ Content-Type: application/json
 {
    "nome": "Joao da Silva Melo",
    "email": "joao@gmail.com",
-   "senha": "Joao134"
+   "senha": "Joao1@"
 }
 
 ### 
@@ -55,5 +55,3 @@ Content-Type: application/json
 GET {{baseURL}}/usuarios/token
 Content-Type: application/json
 access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjE4YWZhNDU0YjE4YmFkYTY2NmE4NDE0In0sImlhdCI6MTYzNzY5MTk5OCwiZXhwIjoxNjM3NzI3OTk4fQ.mw-plPkz8fagYGn6mXZBthp4bstdPPTnGYHPCnkQrxo
-
-
